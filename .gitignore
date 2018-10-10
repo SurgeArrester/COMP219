@@ -102,3 +102,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# book
+COMP219/PythonMachineLearning/9781783555130-PYTHON_MACHINE_LEARNING.pdf
