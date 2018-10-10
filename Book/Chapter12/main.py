@@ -5,9 +5,9 @@ import numpy as np
 os.chdir('/home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/COMP219/Book/Chapter12/')
 
 def load_mnist(path, kind='train'):
+
     """Load MNIST data from path"""
-    labels_path = os.path.join(path,
-                               '%s-label-idx1-ubyte' % kind)
+    labels_path = os.path.join(path,'%s-label-idx1-ubyte' % kind)
     images_path = os.path.join(path,
                                '%s-images-idx3-ubyte' % kind)
     print(labels_path)
