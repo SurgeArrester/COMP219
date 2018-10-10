@@ -1,0 +1,87 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\def\code#1{\texttt{#1}} % to make sections monospaced
+
+ 
+\begin{document}
+\bibliographystyle{ieeetr}
+
+\date{October 8th 2018}
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+%\renewcommand{\qedsymbol}{\filledbox}
+ 
+\title{Lab Two}%replace X with the appropriate number
+\author{COMP 219 - Advanced Artificial Intelligence \\
+		Xiaowei Huang \\ 
+		Cameron Hargreaves\\}
+ 
+\maketitle
+
+\section{Reading}
+Begin by reading chapter two of Python Machine Learning until page 32 (p34 2nd edition) found in the learning resources section of the vital page for COMP219. Code for this book is available online via the vital page or the book website, however it is recommended that you do not copy and paste this, try to type each line and understand what it is you are doing as you go along
+
+\section{Implent the Perceptron Learning Algorithm}
+\begin{enumerate}
+\item Implement the perceptron class from the book in your preferred IDE and run the code up to page 32, verifying your plots match those of the book
+\end{enumerate}
+
+\section{Tasks}
+\begin{enumerate}
+\item Modify the code so that instead of inputting the first and third colummns of the iris dataset (sepal length and petal length), we input the sepal width (first column) and petal length. How many epochs does this take before we no longer update the weights of our perceptron 
+% X = df.iloc[0:100, [1, 2]].values
+% 4 Epochs
+\item Update the code to instead classify "Iris-versicolor" from "Iris-virginica" on sepal and petal length. Will our classifier ever be able to correctly classify all instances of versicolor in this dataset? 
+% y = df.iloc[50:150, 4].values
+% y = np.where(y == 'Iris-virginica', -1, 1)
+
+% X = df.iloc[50:150, [0, 2]].values
+
+% We can never fully classify these as they are not linearly separable
+\item Add the data for the iris species virginica onto the scatter plot from page 29 and plot these values together. Which species are not linearly  separable based on sepal and petal width?
+
+% y = df.iloc[0:150, 4].values
+% X = df.iloc[0:150, [1, 3]].values
+% Versicolor and virginica are not separable
+\end{enumerate}
+
+\section{Further Questions}
+\begin{enumerate}
+\item Below is the logic table for an AND gate, using a learning rate, $\eta$ of 0.5, an initial weight vector of \textbf{w} = [0, 0] and an initial threshold, $\phi$ of 1 what is the final weight vector after running through each value in the below table for three epochs
+\begin{tabular}{cc}
+	\begin{minipage}{.5\linewidth}
+		\begin{tabular}{ll|l}
+		$X_1$ & $X_2$ & $Y$ \\ \hline
+		0 & 0 & -1 \\
+		0 & 1 & -1 \\
+		1 & 0 & -1 \\
+		1 & 1 & 1
+		\end{tabular}
+	\end{minipage} & 
+	\begin{minipage}{.5\linewidth}
+		\begin{tabular}{lll}
+		$W_0$ & $W_1$ & $W_2$ \\ \hline
+		1 & 0 & 0 
+		\end{tabular}
+	\end{minipage} 
+\end{tabular}
+\item Read up to page 42 and implement the AdaLine perceptron that is described in this chapter 
+\item The AdaLine perceptron reuses a lot of the same code as the binary perceptron. Reimplement AdaLine by inheriting the Perceptron class only overriding the \code{fit()} and \code{activation()} functions
+\end{enumerate}
+\end{document}

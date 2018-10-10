@@ -1,0 +1,186 @@
+\documentclass[12pt,a4]{article}
+
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{graphicx}
+
+
+\title{COMP219 - 2018 - First CA Assignment\\
+Individual coursework\\
+Simple Machine Learning Model}
+
+\date{}
+\author{}
+%\parindent=0cm
+
+\begin{document}
+\maketitle
+
+\section*{Assessment Information}
+\begin{table}[htb]
+\begin{tabular}{|l|p{.6\textwidth}|}\hline
+Assignment Number               & 1 (of 2)\\ \hline
+Weighting                       & 10\%\\ \hline
+Assignment Circulated           & Wednesday 10 October 2018\\ \hline
+Deadline                        & Thursday November 21 2018,  15:00\\ \hline
+Submission Mode                 & Electronic\\ \hline
+Learning outcome assessed       & 2.	Ability to choose, compare, and apply suitable basic learning algorithms to simple applications; \\
+                                & 3. Ability to explain how deep neural networks are constructed and trained, and apply deep neural networks to work with large scale datasets \\ \hline
+Purpose of assessment           & To implement machine learning algorithms on  a dataset \\ \hline
+Marking criteria                & The marking scheme can be found in Section~\ref{sec:marking}\\ \hline
+Submission necessary in order   &  No\\
+to satisfy Module requirements? & \\ \hline
+Late Submission Penalty         & Standard UoL Policy.\\ \hline
+\end{tabular}
+\end{table}
+
+
+{\textbf{I enforce a ``no error policy'' in this module: If your code does not 
+compile, your mark will be capped at 40\%. Thus, you may get a higher mark
+for an incomplete solution than for an advanced sketch.}}
+
+\medskip 
+
+If you want to show me your attempt to add some features that does not compile 
+TOGETHER with your working code, please feel free to submit \textbf{two} ZIP files
+clearly indicating which one of them contains working code and which contains
+an incomplete one. In this case, you will not be penalised and you can 
+get a higher mark. 
+
+\newpage
+
+
+
+
+
+\section{Objectives}
+This assignment requires you to \emph{implement} and \emph{evaluate} one (or multiple) simple machine learning models  on a dataset.  
+
+\section{Requirement and Description}
+
+\paragraph{Language and Platform} Python (version 3.5 or above) and Tensorflow (newest version). You may use any libraries available on Python platform, such as numpy, scikit-learn, panda, etc. 
+
+\paragraph{Dataset} You can use any dataset which is convenient for you. It is recommended that you select one that is different from those frequently used in various places, such as Iris. Unless exceptional circumstance, it is recommended that the dataset is not too small (e.g., no less than 200 items) and not too big (e.g., no more than 100,000 items).  There are a few suggested repositories where you can find plenty of datasets: 
+\begin{itemize}
+
+\item scikit-learn toy dataset: http://scikit-learn.org/stable/datasets/index.html
+
+\item UCI machine learning repository: \url{https://archive.ics.uci.edu/ml/datasets.html?sort=nameUp&view=list}
+
+\item kaggle datasets: \url{https://www.kaggle.com/datasets}
+
+\item \url{https://github.com/awesomedata/awesome-public-datasets}
+
+\item \url{https://www.springboard.com/blog/free-public-data-sets-data-science-project/}
+
+\end{itemize}
+
+\paragraph{Learning Task}  You can choose either classification (preferred) or regression. 
+
+\paragraph{Learning Model/Algorithm} You may choose at least one learning algorithm from the following list (but not limited to): 
+\begin{itemize}
+\item decision tree learning
+\item SVM
+\item naive Bayes
+\item (deep) neural network
+\item k nearest neighbor
+\end{itemize} 
+
+
+\paragraph{Assignment Tasks} 
+
+The implementation task (as suggested in the Objectives) is to learn a model from the dataset you select. 
+
+The evaluation task is to apply model evaluation on the learned model. For the materials on model evaluation, you may take a look at the metrics explained in the lecture ``model evaluation'', e.g., accuracy, error, confusion matrices, cross validation results, etc.  
+
+You need to write a proper document explaining the above two tasks. 
+
+\paragraph{Submission files} You submission needs to contain the following two files: 
+\begin{itemize}
+
+\item a package containing your source codes (with the instruction on how to run them) and 
+\item a document explaining your implementation and model evaluation results. 
+
+\end{itemize}
+
+Note: please make sure that you either submit your dataset along with these files or provide clear instructions on how to download the dataset. Please keep in mind the markers won't have plenty of time to be spent on working out how to run your program. So to ensure that you get a fair mark, please provide clean and sufficient instructions.
+
+
+\section{Marking Criteria}\label{sec:marking}
+The assignment is split in a number of steps. 
+Every step gives you some marks. The submitted document should include the following headings (e.g., Step 1 Load data, Step 2.1 code for training, etc) and provide relevant information. 
+At the beginning of the submitted document, please include a check list indicating whether the below marking points have been implemented successfully.
+Unless exceptional cases, the length of the submitted document needs to be within 4 pages (A4 paper, 11pt or 12pt font size). 
+%
+%If you add any extra features to get the extra 20\%, you need to describe what you've done. 
+
+%You do not have to implement them in any particular order. 
+
+\subsection*{Step 1: Loading Data 10\%}
+
+Successfully load the dataset and use python commands to display the dataset information, e.g., the number of data entries, the number of classes, number of data entries for each classes, etc. 
+
+
+%Up to 10\% will be given for a simple bare data loading function call. 
+
+\subsection*{Step 2: Training 30\%} 
+
+Successfully train a model. This step is further divided into smaller sub-steps. 
+
+\subsubsection*{Step 2.1: code for training, 10\%}
+
+You write a code that is dedicated for training task. To get this mark, you need to have a clear comments in your code explaining that which part of the code is for this task. 
+
+\subsubsection*{Step 2.2: successful training, 20\%}
+
+Training can be done successfully. Here you need to have a simple test command to validate the trained model.  
+
+
+\subsection*{Step 3: Model Evaluation 40\%}
+
+Apply model evaluation method to evaluate the simple machine learning model you trained. At least two methods are required (e.g., accuracy and confusion matrix). This part includes the following two aspects: 
+
+\subsubsection*{Step 3.1: explain your experimental design, 20\%}
+
+Here you need to explain which method you are using, and how you design your evaluation experiments. 
+
+
+\subsubsection*{Step 3.2: document your evaluation results, 20\%} 
+
+You can get your mark of this part if you write down your experimental results. 
+
+
+\subsection*{Extra 20\%}
+
+You can see that marks for the steps described add up to 80\%.  In order to get
+20\% extra you need  to train more than one models, and compare them in the model evaluation. You may be able to see e.g., one model is better than the other in terms of some metrics. 
+
+\section{Deadlines and How to Submit}
+\begin{itemize}
+\item Deadline for submitting the first assignment is Thursday, 21 November at 3pm.
+
+\item Submission is via the departmental submission system accessible
+(from within the department) from \\
+\url{http://intranet.csc.liv.ac.uk/teaching/modules/module.php?code=COMP219}.\\
+Please export your project (File $\rightarrow$ Export Project $\rightarrow$ To ZIP)
+and submit the ZIP file.
+
+
+%please 
+%submit a document describing what you've done.
+
+
+If you want to show me your attempt to add some features that does not compile 
+TOGETHER with your working code, please feel free to submit \textbf{two} ZIP files
+clearly indicating which one of them contains working code and which contains
+an incomplete one. In this case, you will not be penalised and you can 
+get a higher mark. 
+
+\end{itemize}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

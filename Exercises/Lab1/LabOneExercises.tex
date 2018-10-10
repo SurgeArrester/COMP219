@@ -1,0 +1,113 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\def\code#1{\texttt{#1}} % to make sections monospaced
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+\bibliographystyle{ieeetr}
+
+\date{October 1st 2018}
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+%\renewcommand{\qedsymbol}{\filledbox}
+ 
+\title{Lab One}%replace X with the appropriate number
+\author{COMP 219 - Advanced Artificial Intelligence \\
+		Xiaowei Huang \\ 
+		Cameron Hargreaves\\}
+ 
+\maketitle
+
+\section{Reading}
+Begin by reading chapter One of Python Machine Learning found in the learning resources section of the vital page for COMP219. Code for this book is available online via the vital page or the book website, however it is HEAVILY recommended that you do not copy and paste this, try to type each line and understand what it is you are doing as you go along
+
+\section{Setting up your python environment}
+\begin{enumerate}
+\item It is generally best practice to use virtual environments for our python package installations however for the scope of these labs this is not entirely necessary. If you are using the university computers then everything should be set up already. If not, install the Anaconda package following these instructions \\https://docs.continuum.io/anaconda/install/ 
+\item Once Anaconda is fully installed, open the Spyder IDE to get started
+\item Here we can see a new file, we can ensure that the packages we will be using for this module are installed by typing \\
+\code{import numpy \\ import scipy \\ import sklearn \\ import maplotlib \\ import pandas} \\
+Press F5 to run the code and save the file, the IPython console in the bottom right should show the file as run with no errors 
+\item Once we have verified that the packages can be imported without error, create a new file as below and run it
+
+\code{import numpy as np \\ x = np.arange(100) \\ y = np.array([5]) \\ z = x + y } \\
+
+We can explore the values of x, y and z in the top right window by clicking on "Variable Explorer" and then double clicking on each of their values. Alternatively we can find the values of each of these by typing \code{x, y} or \code{z} into the console in the bottom right and pressing enter. This can be very useful for finding information about how your program is operating. At any point of the program we can set a breakpoint by pressing F12 on our desired line of code, when we press Ctrl + F5 our program will run in debug mode until this point and we can query our variable values via the console or variable explorer.
+\end{enumerate}
+
+\section{Tasks}
+\begin{enumerate}
+\item Using array indexing give the last ten values of z
+\item Update the code so that x goes from 0 - 1000 in steps of 10
+\item Reshape x so that it is no longer a 100 value array but a 10x10 matrix
+\item Multiply the first row by 1, the second by 2, the third by 3 and so on 
+% https://stackoverflow.com/questions/18522216/multiplying-across-in-a-numpy-array
+\item Using the matplotlib library plot each row of this matrix as a single series on the same graph
+\item Using the matplotlib library plot each row of this matrix as a single series on separate sub-plots of the same figure and save this figure as \code{figure1.png}
+\end{enumerate}
+
+% My code
+%import numpy as np
+%import matplotlib.pyplot as plt
+%
+%x = np.arange(100)
+%y = np.array(5)
+%z = x + y
+%
+%xLastTen = x[90:] # Or x[:-10]
+%xUpdate = np.arange(0, 1000, 10)
+%xReshape = xUpdate.reshape((10, 10))
+%
+%yNew = np.arange(1,11)
+%zNew = xReshape * yNew[:, np.newaxis]
+%
+%#for i in range(10):
+%#    plt.plot(zNew[i])
+%
+%for i in range(10):
+%    ax = plt.subplot(5, 2, i + 1)
+%    plt.plot(zNew[i])
+%
+%plt.show()
+%plt.savefig('figure1.png')
+
+\section{Further Questions}
+\begin{enumerate}
+\item Give an example for a supervised learning problem, an unsupervised learning problem and a reinforcement learning problem
+\item For the spam filtering example, what would be our Training data and what would be our Labels? Once we have a machine learning algorithm, what would we expect the predictions to be
+\item Give an example of a supervised learning problem (not spam filtering) that is a classification task
+\item Give an example of a supervised learning problem (not student SAT scores) that is a regression task
+\item Give an example of a clustering learning problem 
+\item How many samples are in the iris dataset and how many features are given for each sample in the iris dataset
+
+\end{enumerate}
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}

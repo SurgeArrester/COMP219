@@ -1,0 +1,168 @@
+\documentclass[12pt,a4]{article}
+
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{url}
+
+\title{Department of Computer Science\\
+COMP222 Individual coursework\\
+Assignment 2: Robocode tank}
+
+\date{}
+
+%\parindent=0cm
+
+\begin{document}
+\maketitle
+
+\section{Overall marking scheme}
+
+The coursework for COMP222 consists of two assignments 
+contributing altogether 20\% of the final mark. The contribution of the single
+assignments is as follows:
+
+\vspace{.2cm}
+\begin{tabular}{lr}
+Assignment 1 & 10\% \\
+Assignment 2 & 10\% \\
+\hline 
+TOTAL        & 20\%
+\end{tabular}
+
+%\newpage
+\section{No Error Policy}
+\framebox[\textwidth]{\parbox{0.9\textwidth}{\textbf{I enforce a ``no error policy'' in 
+this module: If your code does not 
+compile, your mark will be capped at 40\%. Thus, you may get a higher mark
+for an incomplete solution than for an advanced sketch.}}}
+
+\medskip 
+
+If you want to show me your attempt to add some features that does not compile 
+TOGETHER with your working code, feel free to submit TWO jar files
+clearly indicating which one of them contains working code and which contains
+an incomplete one. In this case, you will not be penalised and you can 
+get a higher mark. 
+
+\section{Robocode}
+Robocode  is a programming game, where
+the goal is to develop a robot battle tank to battle against other tanks. The
+robot battles are running in real-time and on-screen.  Robots can move, shoot
+at each other, scan for each other, and hit the walls (or other robots).
+More details can be found on the project web site, \url{http://robocode.sourceforge.net/}
+
+\section{Objectives}
+
+This assignment requires you to design and implement a tank bot for the
+Robocode tank battle game. You need to choose a game AI behaviour model (such
+as, for example, finite state machine, decision trees, behaviour trees, or any
+other mechanism of your choice) and implement your robot based on this
+behaviour model. 
+
+
+\section{Marking scheme}
+You are required to submit Java code and an electronic document describing your design and
+implementation.
+\subsection{Documentation (40\% of the mark)}
+You are required to submit a 700 to 1\,000 words document containing:
+\begin{enumerate} 
+\item
+A short description of the behaviour control model of your choice (e.g., FSM,
+Decision trees, etc.). You only need to write a couple of paragraphs to show
+your understanding of how the model works.
+\mbox{}\hfill\textbf{10~marks}
+%%%
+\item A Robocode bot design description. In your design you should use the
+chosen behaviour control mechanism. For example, if you choose FSMs to
+represent bot's behaviour, give a graphical representation of states,
+transitions, and conditions under which the machine switches from one state to another.
+If you choose a tree-based model, give a graphical representation 
+of the tree and clearly indicate tests and actions. Justify your design 
+decisions, in particular, comment on why you believe
+these design decisions makes your bot more likely win the tournament.
+\mbox{}~\hfill\textbf{20~marks}
+%%%
+\item 
+A description of you implementation. Explain what classes and methods are used
+to implement the chosen behaviour model. You are not restricted  in HOW you
+implement the bot (you can hard-code the behaviour in an ad-hoc manner,
+implement a general scheme, or use a third-party library) but your mark will
+depend on how closely you follow the design. You are allowed to deviated from
+the design; however, if your implementation does differ from the design, 
+clearly identify and justify the modifications.
+\mbox{}~\hfill\textbf{10~marks}
+
+\end{enumerate}
+\subsection{Implementation (30\% of the mark)}
+When you create a new robot in the editor use the following naming convention
+\begin{description}
+\item[Robot name:] 
+Please try to give your robot a unique name. That could be
+\textsf{FirstnameSecondname}
+(for example, I would use \textsf{BorisKonev}) without spaces and  special characters,
+letter 'A' followed by your student ID as in \textsf{A200812345}
+(this can compromize your ID),
+or any other name that is unlikely to be chosen by others, e.g.,
+\textsf{Crusher15041991}.
+
+Please put your full name and student ID as a comment in the beginning of
+every Java file that you submit. 
+
+\item[Package name:] use \textsf{comp222}\\
+\textbf{If you use a different package name, your bot might be lost and not make it
+to the competition.}
+\end{description}
+
+The implementation will be marked as follows:
+\begin{itemize}
+\item Providing response to battle events (onScannedRobot, onHitByBullet, onHitWall,\dots)
+\mbox{}\hfill\textbf{10~marks}
+\item Following the design
+\mbox{}\hfill\textbf{10~marks}
+\item Clarity and style of code
+\mbox{}\hfill\textbf{10~marks}
+\end{itemize}
+
+
+
+\subsection{Battle competition(30\% of the mark)}
+Submitted bots will take part in a tournament. In order to qualify to
+participate in the tournament, you should make a reasonable effort to modify the
+default (bot skeleton in the editor) behaviour. Additionally, \textbf{no robot with code taken 
+from elsewhere (with or without acknowledging the source) will be allowed in the competition}.
+
+In the tournament bots will be randomly divided in groups of about 10 bots each
+(depending on the number of submission); group winners will progress to battle
+in the next round.
+
+The battlefield size is Robocode default.
+
+In the end, bots will be ranked by the \textbf{Robocode Total Score}. Those in the upper
+third of the ranking will get extra 30\%, those in the middle third will get
+extra 20\%, and those in the lower third will get extra 10\%.
+
+
+{If for some reason you do not wish your robot to take part in the tournament,
+please let me know in advance.}
+
+\section{Deadlines and How to Submit}
+\begin{itemize}
+\item Deadline for submitting the second assignment is Monday, 29 April at
+3pm.
+
+\item Submission is via the departmental submission system accessible
+(from withing the department) from \\
+\url{http://www.csc.liv.ac.uk/teaching/modules/year2s2/comp222.html}.\\
+
+\item In order to submit your bot, export it as a Jar file by choosing\\
+\mbox{Robot$\to$``Package robot for upload''} in the Robocode menu.
+
+
+
+\end{itemize}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
