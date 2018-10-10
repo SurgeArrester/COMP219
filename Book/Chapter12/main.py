@@ -2,7 +2,7 @@ import os
 import struct 
 import numpy as np 
 
-os.chdir('/home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/Book/Chapter12')
+os.chdir('/home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/COMP219/Book/Chapter12/')
 
 def load_mnist(path, kind='train'):
     """Load MNIST data from path"""
