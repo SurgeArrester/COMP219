@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1539260516 "/home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/COMP219/Exercises/Lab3/LabThreeExercises.tex" "LabThreeExercises.pdf" "LabThreeExercises" 1539260516
+["pdflatex"] 1539266334 "/home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/COMP219/Exercises/Lab3/LabThreeExercises.tex" "LabThreeExercises.pdf" "LabThreeExercises" 1539266334
   "/etc/texmf/web2c/texmf.cnf" 1537046662 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/COMP219/Exercises/Lab3/LabThreeExercises.tex" 1539260515 3673 02adeb07537eb9abdcef015c881e0943 ""
+  "/home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/COMP219/Exercises/Lab3/LabThreeExercises.tex" 1539266334 6650 82415c349b8cdc9609386583f9eebac8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -66,9 +66,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1503343927 31343 93828589fb0cea665e553ee5a17ad2d4 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1537046662 36701 93b0029bcb0689d8736ec63fbe71354b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1537046663 718487 962fb0b84cce60c1f578441ce756cf43 ""
-  "LabThreeExercises.aux" 1539260516 346 41ca726604d621b240b788bf982aa6a4 ""
-  "LabThreeExercises.tex" 1539260515 3673 02adeb07537eb9abdcef015c881e0943 ""
+  "LabThreeExercises.aux" 1539266334 493 e36fba587eb7e2d77ece5884cbfa6395 ""
+  "LabThreeExercises.tex" 1539266334 6650 82415c349b8cdc9609386583f9eebac8 ""
   (generated)
-  "LabThreeExercises.pdf"
-  "LabThreeExercises.log"
   "LabThreeExercises.aux"
+  "LabThreeExercises.log"
+  "LabThreeExercises.pdf"
