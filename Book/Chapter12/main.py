@@ -1,6 +1,7 @@
 import os
 import struct 
 import numpy as np 
+import matplotlib.pyplot as plt
 
 os.chdir('/home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/COMP219/Book/Chapter12/')
 
@@ -27,4 +28,17 @@ def load_mnist(path, kind='train'):
 
     return images, labels
 
-X_train, y_train = load_mnist('', kind='train')
+X_train, y_train = load_mnist('', kind='t10k')
+print('Rows: {0}, Columns: {1}'.format(X_train.shape[0], X_train.shape[1]))
+
+# fig, ax = plt.subplots(nrows=2, ncols=5, sharex=True, sharey=True)
+# ax = ax.flatten()
+# for i in range(10):
+#     img = X_train[y_train==i][0].reshape(28,28)
+#     ax[i].imshow(img, cmap='Greys')
+# ax[0].set_xticks([])
+# ax[0].set_yticks([])
+# plt.tight_layout()
+# plt.show()
+
+np.savez('mnist_scaled')

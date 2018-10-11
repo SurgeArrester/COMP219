@@ -1,9 +1,9 @@
-PWD /home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/Exercises/Lab1
+PWD /home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/COMP219/Exercises/Lab1
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/Exercises/Lab1/LabOneExercises.tex
+INPUT /home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/COMP219/Exercises/Lab1/LabOneExercises.tex
 OUTPUT LabOneExercises.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls

@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1538743787 "/home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/Exercises/Lab1/LabOneExercises.tex" "LabOneExercises.pdf" "LabOneExercises" 1538743787
+["pdflatex"] 1539250401 "/home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/COMP219/Exercises/Lab1/LabOneExercises.tex" "LabOneExercises.pdf" "LabOneExercises" 1539250401
   "/etc/texmf/web2c/texmf.cnf" 1537046662 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/Exercises/Lab1/LabOneExercises.tex" 1538743787 5947 960c2b984c036dcde936efbb684a0501 ""
+  "/home/cameron/Dropbox/University/PhD/Teaching/COMP219-AI/COMP219/Exercises/Lab1/LabOneExercises.tex" 1539250397 5948 6a5802fedd1cf1d7799c90342fce972b ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
@@ -39,9 +39,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1503343927 31343 93828589fb0cea665e553ee5a17ad2d4 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1537046662 36701 93b0029bcb0689d8736ec63fbe71354b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1537046663 718487 962fb0b84cce60c1f578441ce756cf43 ""
-  "LabOneExercises.aux" 1538743787 337 24afef50b907b4f04c87d764db8d3383 ""
-  "LabOneExercises.tex" 1538743787 5947 960c2b984c036dcde936efbb684a0501 ""
+  "LabOneExercises.aux" 1539250401 337 24afef50b907b4f04c87d764db8d3383 ""
+  "LabOneExercises.tex" 1539250397 5948 6a5802fedd1cf1d7799c90342fce972b ""
   (generated)
+  "LabOneExercises.aux"
   "LabOneExercises.pdf"
   "LabOneExercises.log"
-  "LabOneExercises.aux"
