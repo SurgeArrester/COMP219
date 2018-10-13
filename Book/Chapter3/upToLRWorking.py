@@ -4,8 +4,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Perceptron
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
-from sklearn import metrics
-
 from matplotlib.colors import ListedColormap
 import matplotlib.pyplot as plt
 import numpy as np 
@@ -46,41 +44,38 @@ def plot_decision_regions(X, y, classifier,
             s=100, label='test set')
 
 iris = datasets.load_iris()
-X = iris.data
+X = iris.data[:, [2, 3]]
 y = iris.target
 
-accuracy = []
-for i in np.linspace(0.01, 0.98, 100):
-    # split into training and test data
-    X_train, X_test, y_train, y_test = train_test_split(
-                                    X, y, test_size=i, random_state=0)
+# split into training and test data
+X_train, X_test, y_train, y_test = train_test_split(
+                                X, y, test_size=0.3, random_state=0)
 
-    # define scaler
-    sc = StandardScaler()
-    sc.fit(X_train)
+# define scaler
+sc = StandardScaler()
+sc.fit(X_train)
 
-    #scale data
-    X_train_std = sc.transform(X_train)
-    X_test_std = sc.transform(X_test)
+#scale data
+X_train_std = sc.transform(X_train)
+X_test_std = sc.transform(X_test)
 
-    # Define and train perceptron
-    ppn = Perceptron(n_iter=40, eta0=0.1, random_state=0)
-    ppn.fit(X_train_std, y_train)
+# Define and train perceptron
+ppn = Perceptron(n_iter=40, eta0=0.1, random_state=0)
+ppn.fit(X_train_std, y_train)
 
-    # Define and train logistic regression
-    lr = LogisticRegression(C=1000.0, random_state=0)
-    lr.fit(X_train_std, y_train)
+# Define and train logistic regression
+lr = LogisticRegression(C=1000.0, random_state=0)
+lr.fit(X_train_std, y_train)
 
-    # make predictions 
-    y_pred_ppn = ppn.predict(X_test_std)
-    y_pred_lr = lr.predict(X_test_std)
+# make predictions 
+y_pred_ppn = ppn.predict(X_test_std)
+y_pred_lr = lr.predict(X_test_std)
 
-    print('Misclassified samples for perceptron: {0}'.format((y_test != y_pred_ppn).sum()))
-    print('Perceptron Accuracy: {0:.2f}'.format(accuracy_score(y_test, y_pred_ppn)))
+print('Misclassified samples for perceptron: {0}'.format((y_test != y_pred_ppn).sum()))
+print('Perceptron Accuracy: {0:.2f}'.format(accuracy_score(y_test, y_pred_ppn)))
 
-    print('Misclassified samples for Logistic Regression: {0}'.format((y_test != y_pred_lr).sum()))
-    print('Logistic Regression Accuracy: {0:.2f}'.format(accuracy_score(y_test, y_pred_lr)))
-    accuracy.append(accuracy_score(y_test, y_pred_lr))
+print('Misclassified samples for Logistic Regression: {0}'.format((y_test != y_pred_lr).sum()))
+print('Logistic Regression Accuracy: {0:.2f}'.format(accuracy_score(y_test, y_pred_lr)))
 
 X_combined_std = np.vstack((X_train_std, X_test_std))
 y_combined = np.hstack((y_train, y_test))
@@ -90,17 +85,12 @@ y_combined = np.hstack((y_train, y_test))
 #                       classifier=ppn,
 #                       test_idx=range(105,150))
 
-# plot_decision_regions(X_combined_std,
-#                       y_combined,
-#                       classifier=lr,
-#                       test_idx=range(105, 150))
+plot_decision_regions(X_combined_std,
+                      y_combined,
+                      classifier=lr,
+                      test_idx=range(105, 150))
 
-plt.plot(accuracy)
+plt.xlabel('petal length [standardized]') 
+plt.ylabel('petal width [standardized]') 
+plt.legend(loc='upper left')
 plt.show()
-
-print(metrics.classification_report(y_test,
-                                    y_pred_lr,target_names=iris.target_names))
-# plt.xlabel('petal length [standardized]') 
-# plt.ylabel('petal width [standardized]') 
-# plt.legend(loc='upper left')
-# plt.show()

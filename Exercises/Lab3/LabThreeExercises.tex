@@ -44,48 +44,74 @@ Begin by reading chapter three of Python Machine Learning until page 68 (p75 2nd
 
 \subsection{Tasks}
 \begin{enumerate}
-\item Modify the code so that instead of inputting the first and third colummns of the iris dataset (sepal length and petal length), we input the sepal width (first column) and petal length. How many epochs does this take before we no longer update the weights of our perceptron 
-% X = df.iloc[0:100, [1, 2]].values
-% 4 Epochs
-\item Update the code to instead classify "Iris-versicolor" from "Iris-virginica" on sepal and petal length. Will our classifier ever be able to correctly classify all instances of versicolor in this dataset? 
-% y = df.iloc[50:150, 4].values
-% y = np.where(y == 'Iris-virginica', -1, 1)
+\item Modify the code so that instead of inputting the third and fourth colummns of the iris dataset (petal length and petal width), use two for loops to test each of the features against each other 
 
-% X = df.iloc[50:150, [0, 2]].values
+% iris = datasets.load_iris()
+% for i in range(4):
+%     for j in range(4):    
+%         X = iris.data[:, [i,j]]
+%         y = iris.target
+%         ...
+%         y_pred_lr = lr.predict(X_test_std)
+%         print('\nColumn One: {} Column Two: {}'.format(i, j))
+%         print('Misclassified samples for perceptron: {0}'.format((y_test != y_pred_ppn).sum()))
 
-% We can never fully classify these as they are not linearly separable
-\item Add the data for the iris species virginica onto the scatter plot from page 29 and plot these values together. Which species are not linearly  separable based on sepal and petal width?
 
-% y = df.iloc[0:150, 4].values
-% X = df.iloc[0:150, [1, 3]].values
-% Versicolor and virginica are not separable
+\item Using the results from the previous step, which two features give the best performance on training a perceptron classifier, and which two give the best performance for a logistic regression classifier?
+% The final two columns, 3 and 4
+
+\item Update the code to instead use all four features as an input to our classifier (you will have to remove plotting for this)
+% X = iris.data
+
+\item As these are binary classifiers (can only distinguish between two classes), for a multi-class prediction sklearn internally creates three classifiers, and then picks the classifier that has the greatest output. We can see the weights for each of these by printing the coef\_ property, each row is the weights for a classifier and each column is the specific weight for a feature. Looking at this for each classifier, which feature is most heavily used to classify the third class, Iris-virginica
+\begin{verbatim}
+    print(ppn.coef_)
+
+    [[-0.08174031  0.06591182 -0.1527238  -0.10880823]
+    [-0.13903492 -0.20727533  0.36510534 -0.31489372]
+    [-0.17799526 -0.12336785  0.96486444  0.41486971]]
+\end{verbatim}
+
+% Third feature, petal length as this has the highest weight associated 
+
+\item In our program we have used a split of 70\% of the data to train our classifiers and 30\% of the data to test our classifiers. using all four features, loop through the program 100 times with a range of testing data from 1 - 98\% of the dataset (hint: look at \code{np.linspace()}), save the accuracy from each of these runs for the logistic regression classifier, and plot these accuracies. Where do we find peak performance?
+
+% accuracy = []
+% for i in np.linspace(0.01, 0.98, 100):
+%     # split into training and test data
+%     X_train, X_test, y_train, y_test = train_test_split(
+%                                     X, y, test_size=i, random_state=0)
+%     ...
+%     accuracy.append(accuracy_score(y_test, y_pred_lr))
+%
+% plt.plot(accuracy)
+% plt.show()
+
+% Peaks at around 20% and again at 1-6% can see signs of overfitting etc. 
+
 \end{enumerate}
 
-\section{Further Questions}
+\section{Further Tasks}
 \begin{enumerate}
-\item Below is the logic table for an AND gate, using a learning rate, $\eta$ of 0.5, an initial weight vector of \textbf{w} = [0, 0] and an initial threshold, $\phi$ of 1 what is the final weight vector after running through each value in the below table for three epochs
-\begin{tabular}{cc}
-	\begin{minipage}{.5\linewidth}
-		\begin{tabular}{ll|l}
-		$X_1$ & $X_2$ & $Y$ \\ \hline
-		0 & 0 & -1 \\
-		0 & 1 & -1 \\
-		1 & 0 & -1 \\
-		1 & 1 & 1
-		\end{tabular}
-	\end{minipage} & 
-	\begin{minipage}{.5\linewidth}
-		\begin{tabular}{lll}
-		$W_0$ & $W_1$ & $W_2$ \\ \hline
-		1 & 0 & 0 
-		\end{tabular}
-	\end{minipage} 
-\end{tabular}
-\item Read up to page 42 and implement the AdaLine perceptron that is described in this chapter 
-\item The AdaLine perceptron reuses a lot of the same code as the binary perceptron. Reimplement AdaLine by inheriting the Perceptron class only overriding the \code{fit()} and \code{activation()} functions
+\item Use the classification\_report function from the sklearn.metrics module using the parameter target\_names=iris.target\_names to get a more detailed overview of the scores. This uses a confusion matrix approach to the scores which is more widely used for performance metrics, look into what a confusion matrix is.
+% from sklearn import metrics
+% print(metrics.classification_report(y_test, y_pred_lr,target_names=iris.target_names))
+\item Here we have defined our Scaler and classifiers separately, however this can be time consuming when we are trying out many classifiers, bundle these together using a Pipeline class from sklearn
+% from sklearn.pipeline import Pipeline
+% clf = Pipeline([
+%                      ('scaler', StandardScaler()),
+%		    ('linear_model', SGDClassifier())
+% ])
+
+\item We have used a set random state so that our programs are reproducible across machines. In reality we would want to run the classifier multiple times with different values in our training and test data. Run the logistic regression classifier with five different values of random\_state and take the average of their accuracy
+% create accuracy array, run for loop with different indexes in random_state
+\item The above step is a commonly done task called k-folds cross validation, from the sklearn module sklearn.cross\_validation import the cross\_val\_score function and the KFold class, implement a KFold cross validator which shuffles the data 5 times and use cross\_val\_score to return the average accuracy of these five.
+% cv = KFold(X.shape[0], 5, shuffle=True, random_state=33)
+% scores = cross_val_score(clf, X, y, cv=cv)
+% print(scores)
 \end{enumerate}
 
-\section{Code for sklearn perceptron}
+\section{Code for sklearn perceptron and logistic regression}
 \begin{verbatim}
 import numpy as np 
 import matplotlib.pyplot as plt
